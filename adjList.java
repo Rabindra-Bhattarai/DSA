@@ -32,6 +32,26 @@ public class adjList {
         }
     }
 
+    // Depth first search
+
+    void depthfirstSearch(int source){
+        boolean visited[]new boolean [vertices];
+        dfs(source, visited);
+
+    }
+
+    void dfs(int rootnode, boolean[]visited){
+        System.out.println(rootnode);
+        //getadjnodes and traverse through list
+        linkedlist.Node current = adjList[rootnode].head;
+        while (current != null) {
+            if(!visited[current.data]){
+                dfs(current.data);
+            }
+            current = current.next;
+
+    }
+
     public List<Integer> getAdjacentNode(int i) {
         List<Integer> adjNodes = new ArrayList<>();
         linkedlist.Node current = adjList[i].head;

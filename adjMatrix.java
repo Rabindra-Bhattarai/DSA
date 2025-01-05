@@ -5,6 +5,9 @@ public class adjMatrix {
     int[][] matrix;
     int vertices;
 
+    // print matrix
+    // breadth first matrix
+
     adjMatrix(int vertices) {
         this.vertices = vertices;
         matrix = new int[vertices][vertices];
@@ -44,6 +47,28 @@ public class adjMatrix {
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
+        }
+    }
+
+    // breadth first search
+
+    void BFS(int source) {
+        Queue q = new Queue(vertices);
+        boolean visited[] = new boolean[vertices];
+        q.enqueue(source);
+        visited[source] = true;
+        while (!q.isEmpty()) {
+            int x = q.dequeue();
+            System.out.println(x);
+            // call getAdjNodes function and iterate through list
+            for (int j = 0; j < vertices; j++) {
+                if (matrix[x][j] != 0) {
+                    if (!visited[j]) {
+                        q.enqueue(j);
+                        visited[j] = true;
+                    }
+                }
+            }
         }
     }
 

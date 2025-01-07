@@ -13,9 +13,9 @@ public class adjMatrix {
         matrix = new int[vertices][vertices];
     }
 
-    void addEdges(int u, int v) {
-        matrix[u][v] = 1;
-        matrix[v][u] = 1;
+    void addEdges(int u, int v, int w) {
+        matrix[u][v] = w;
+        matrix[v][u] = w;
     }
 
     void printGraph() { // graph print
@@ -72,14 +72,46 @@ public class adjMatrix {
         }
     }
 
+    // Daijestra Algorithm
+
+    int daijakstra(int source, int destination) {
+        int dist[] = new int[vertices];
+        int prevpath = new int[vertices];
+        boolean visited[] = new boolean[vertices];
+        for (int i = 0; i < vertices; i++) {
+            dist[i] = Integer.MAX_VALUE;
+            prevpath[i] = -1;
+        }
+        dist[source] = 0;
+
+        for (int i = 0; i < vertices; i++) {
+            // find min vertex
+            int minvertex = findMinVertex(dist, visited);
+        }
+    }
+
+    int findMinVerte(int[] dist, boolean[] visited) {
+        int min = -1;
+        for (int i = 0; i < vertices; i++) {
+            if (min == -1 && !visited[i]) {
+                min = i;
+            }
+        }
+        return min;
+    }
+
     public static void main(String[] args) {
-        adjMatrix adj = new adjMatrix(5);
-        adj.addEdges(0, 1);
-        adj.addEdges(0, 2);
-        adj.addEdges(1, 3);
-        adj.addEdges(1, 4);
-        adj.addEdges(2, 3);
-        adj.addEdges(3, 4);
+        adjMatrix adj = new adjMatrix(6);
+        adj.addEdges(0, 1, 10);
+        adj.addEdges(0, 5, 100);
+        adj.addEdges(0, 2, 5);
+        adj.addEdges(1, 2, 2);
+        adj.addEdges(1, 3, 5);
+        adj.addEdges(2, 3, 10);
+        adj.addEdges(2, 4, 10);
+        adj.addEdges(2, 4, 20);
+        adj.addEdges(3, 5, 2);
+        adj.addEdges(4, 5, 5);
         adj.printGraph();
 
         System.out.println("Matrix representation:");

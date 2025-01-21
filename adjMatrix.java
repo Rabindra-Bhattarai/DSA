@@ -87,7 +87,29 @@ public class adjMatrix {
         for (int i = 0; i < vertices; i++) {
             // find min vertex
             int minvertex = findMinVertex(dist, visited);
+            visited[minvertex]=true;
+            for(int j=0; j<vertices; j++){
+                if(matrix[minvertex][j]!=0){
+                    if(visited[j]&&dist[minvertex]+matrix[minvertex][j]<dist[j]){
+                        dist[j]=dist[minvertex]+matrix[minvertex][j];
+                        prevpath[j]=minvertex
+
+                    }
+                }
+            }
         }
+        //print path
+        int x=destination;
+        Stack<Integer> stk=new Stack<>();
+        stk.push(x);
+        while(prevpath)[x]!=1{
+            x=prevpath[x];
+            stk.push(x);
+        }
+        while(!stk.isEmpty()){
+            System.out.println(stk.pop());
+        }
+        return dist[destination];
     }
 
     int findMinVerte(int[] dist, boolean[] visited) {

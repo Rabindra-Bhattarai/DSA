@@ -1,0 +1,63 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "BST",
+            "request": "launch",
+            "mainClass": "BST",
+            "projectName": "DSA_9f683289"
+        },
+        {
+            "type": "java",
+            "name": "NQueen",
+            "request": "launch",
+            "mainClass": "NQueen",
+            "projectName": "DSA_9f683289"
+        },
+        {
+            "type": "java",
+            "name": "adjList",
+            "request": "launch",
+            "mainClass": "adjList",
+            "projectName": "DSA_9f683289"
+        },
+        {
+            "type": "java",
+            "name": "adjMatrix",
+            "request": "launch",
+            "mainClass": "adjMatrix",
+            "projectName": "DSA_9f683289"
+        },
+        {
+            "type": "java",
+            "name": "dynamicProgrammingExample",
+            "request": "launch",
+            "mainClass": "dynamicProgrammingExample",
+            "projectName": "DSA_9f683289"
+        },
+        {
+            "type": "java",
+            "name": "stacks",
+            "request": "launch",
+            "mainClass": "stacks",
+            "projectName": "DSA_9f683289"
+        },
+        {
+            "type": "java",
+            "name": "trees",
+            "request": "launch",
+            "mainClass": "trees",
+            "projectName": "DSA_9f683289"
+        }
+    ]
+}
